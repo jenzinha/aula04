@@ -24,7 +24,7 @@ const users = [
 
 
 const getUserAuthenticated = (user) => { 
-   user.map(u => u.email === user.email && u.password === user.password);
+   return users.map(u => u.email === user.email && u.password === user.password);
 }
 
 const getUsers = () =>{
