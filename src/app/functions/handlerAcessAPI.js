@@ -28,6 +28,6 @@ const getUserAuthenticated = (user) => {
 }
 
 const getUsers = () =>{
-        
+      return users
 }
 export { getUsers, getUserAuthenticated };
