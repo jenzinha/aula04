@@ -11,8 +11,10 @@ export const middleware = (request) => {
     if (!isTokenValidated || !token) {
         if (request.nextUrl.pathname === '/pages/dashboard') {
             return NextResponse.redirect(urlLogin);
-        }
+        }    
     }
+        if (request.nextUrl.pathname === '/' || !token)  
+
     NextResponse.next();
 };
 export const config = {
