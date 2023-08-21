@@ -13,7 +13,8 @@ export const middleware = (request) => {
             return NextResponse.redirect(urlLogin);
         }    
     }
-        if (request.nextUrl.pathname === '/' || !token)  
+        if (request.nextUrl.pathname === '/' && !isTokenValidated || !token)  
+        return NextResponse.redirect('/pages/dashboard');
 
     NextResponse.next();
 };
