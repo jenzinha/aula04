@@ -7,7 +7,7 @@ export default async function Dashboard() {
             <h1>Dashboard</h1>
             <h2>Lista de Usuários:</h2>
             <ul>
-                {users.map((user, index) => (
+                {users?.map((user, index) => (
                     <li key= {index}>{user.name}, {user.email}</li>
                 ))}
             </ul>
