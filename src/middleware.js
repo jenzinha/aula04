@@ -12,10 +12,10 @@ export const middleware = (request) => {
         if (request.nextUrl.pathname === '/pages/dashboard') {
             return NextResponse.redirect(urlLogin);
         }    
-    }
-        if (request.nextUrl.pathname === '/' && !isTokenValidated || !token)  
-       return NextResponse.redirect('/pages/dashboard');
 
+        if (request.nextUrl.pathname === '/' && token)  
+         return NextResponse.redirect('/pages/dashboard');
+        }
     NextResponse.next();
 };
 export const config = {
