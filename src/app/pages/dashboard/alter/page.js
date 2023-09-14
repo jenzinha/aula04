@@ -21,7 +21,7 @@ export default function AlterarUsers() {
 
     return (
         <div className='container'>
-            <h3 className='conta'>Registrar usuarios</h3>
+            <h3 className='conta'>Alterar usuario</h3>
             
             <form className='contact_form' onSubmit={alterar}>
                 

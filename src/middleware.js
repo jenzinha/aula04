@@ -12,11 +12,11 @@ export const middleware = (request) => {
         if (request.nextUrl.pathname === '/pages/dashboard') {
             return NextResponse.redirect(urlLogin);
         }    
- 
         if (request.nextUrl.pathname === '/' && token){
          return NextResponse.redirect('/pages/dashboard');     
         }
-        if (request.nextUrl.pathname === '/pages/alter/alter' || request.nextUrl.pathname === '/pages/register/register'){
+
+        if (request.nextUrl.pathname === '/pages/dashboard/register' | request.nextUrl.pathname ==='/pages/dashboard/alter'){
             return NextResponse.redirect(urlLogin);
         }
     }
@@ -24,6 +24,6 @@ export const middleware = (request) => {
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard', '/pages/alter/alter', '/pages/register/register']
+    matcher: ['/', '/pages/dashboard', '/pages/dashboard/register', '/pages/dashboard/alter']
 };
 
