@@ -10,10 +10,14 @@ const users = [
   ];
 
 const getUserAuthenticated = (user) => { 
-   return users.find(u => u.email === user.email && u.password === user.password);
+   let userAuth = {}
+   users.map(u => {
+   if (u.email === user.email && u.password === user.password){
+      userAuth = u
+   }});
+   return userAuth
 }
-
 const getUsers = () =>{
       return users
 }
-export { getUsers, getUserAuthenticated };
+export { getUsers, getUserAuthenticated};

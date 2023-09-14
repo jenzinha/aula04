@@ -6,6 +6,7 @@ export const middleware = (request) => {
 
     const token = request.cookies.get('token')?.value;
     const urlLogin = new URL('/', request.url);
+    const urlRegister = new URL('/pages/dashboard/register', request.url)
     const isTokenValidated = validateToken(token);
 
     if (!isTokenValidated || !token) {
@@ -16,8 +17,11 @@ export const middleware = (request) => {
          return NextResponse.redirect('/pages/dashboard');     
         }
 
-        if (request.nextUrl.pathname === '/pages/dashboard/register' | request.nextUrl.pathname ==='/pages/dashboard/alter'){
+        if (request.nextUrl.pathname === '/pages/dashboard/register' || request.nextUrl.pathname ==='/pages/dashboard/alter'){
             return NextResponse.redirect(urlLogin);
+        } 
+        if (isTokenValidated) {
+            return NextResponse.redirect(urlRegister);
         }
     }
         
