@@ -2,11 +2,10 @@
 import { NextResponse } from "next/server";
 import { validateToken } from "./app/functions/validateToken";
 
-export const middleware = (request) => {
+export const middleware = async (request) => {
 
     const token = request.cookies.get('token')?.value;
     const urlLogin = new URL('/', request.url);
-    const urlRegister = new URL('/pages/dashboard/register', request.url)
     const isTokenValidated = validateToken(token);
 
     if (!isTokenValidated || !token) {
@@ -21,7 +20,7 @@ export const middleware = (request) => {
             return NextResponse.redirect(urlLogin);
         } 
         if (isTokenValidated) {
-            return NextResponse.redirect(urlRegister);
+            return NextResponse.next();
         }
     }
         
