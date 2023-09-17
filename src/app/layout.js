@@ -20,9 +20,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
+      <header>
+        <div>
         <Link href="/pages/dashboard/register"> registrar </Link>
         <Link href="/pages/dashboard/alter"> alterar </Link>
+        </div>
         <button onClick={logout}>  sair </button>
+        </header>
         <div>{children} </div>
         </body>
     </html>

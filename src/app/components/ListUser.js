@@ -1,13 +1,14 @@
+import '@/global.css'
+
 export default async function ListUsers({users}){
     await new Promise((resolve) => setTimeout(resolve, 3000));
     return(
-        <div>
+        <div className='divUsers'>
             <h2>Lista de Usuários:</h2>
-            <ul>
+           
                 {users?.map((user, index) => (
-                    <li key= {index}>{user.name}, {user.email}</li>
+                    <p className='users' key= {index}>{user.name}, {user.email}</p>
                 ))}
-            </ul>
         </div>
     )
 }

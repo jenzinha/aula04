@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import {ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
+import '@/global.css'
 
 export default function AlterarUsers() {
     const route = useRouter();
@@ -30,13 +31,13 @@ export default function AlterarUsers() {
     }
 
     return (
-        <div className='container'>
-            <h3 className='conta'>Alterar usuario</h3>
-            
+        <div>
+            <h1 className='conta'>Alterar Usuário</h1>
+            <div className='container'>
             <form className='contact_form' onSubmit={alterar}>
                 
                 <div className='nome'> 
-                <input required id='texto' placeholder='digite seu nome' type="text" name="name" value={nameAlter}
+                <input required placeholder='digite seu nome' type="text" name="name" value={nameAlter}
                 onChange={e => setnameAlter(e.target.value)}/>  
                 </div>
 
@@ -46,16 +47,18 @@ export default function AlterarUsers() {
                 </div>
 
                 <div className='password'>
-                <input required id='texto' placeholder='digite uma nova senha' type="password" name="password" value={passwordAlter}
+                <input required  placeholder='digite uma nova senha' type="password" name="password" value={passwordAlter}
                 onChange={e => setpasswordAlter(e.target.value)}/> 
                 </div>
 
 
                 <div className='submit'> 
-                <button id="form_button" type='submit'>Atualizar</button>
-                </div>   
+                <button className="botao" type='submit'>Atualizar</button>
+                </div>  
+               
             </form>
             <ToastContainer/>
             </div>
+            </div> 
     );
 }

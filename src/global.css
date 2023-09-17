@@ -1,0 +1,98 @@
+body{
+    background-color: #935caf;
+}
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   
+form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    width: 300px; 
+    text-align: center; 
+    background-color: darkgray; 
+  }
+  
+  input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #935caf; 
+    outline: none; 
+    background-color: darkgray;
+  }
+.botao {
+    width: 50%;
+    padding: 10px;
+    background-color: #6a0dad; 
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+h1{
+    text-align: center;
+    color: #6a0dad; 
+  }
+
+.divUsers {
+    background-color: darkgray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    width: 300px; 
+    text-align: center; 
+    margin: 0 auto; 
+  }
+  h2 {
+    font-size: 20px;
+    color: #6a0dad; 
+  }
+  .users {
+    font-size: 18px;
+    color: #333; 
+    margin: 10px 0; 
+  }
+p{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+ background-color: darkgray; 
+ padding: 20px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-radius: 5px;
+}
+header button {
+ background-color: #6a0dad; 
+ color: #fff; 
+ border: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #6a0dad;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.2s; 
+    font-size: 18px;
+  }
+  
+  a:hover {
+    color: #8b008b;
+  }

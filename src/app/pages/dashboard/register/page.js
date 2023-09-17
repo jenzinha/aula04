@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import {ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
-
+import '@/global.css'
 export default function RegisterUsers() {
     const route = useRouter();
     const [name, setName] = useState("");
@@ -30,13 +30,13 @@ export default function RegisterUsers() {
     }
 
     return (
-        <div className='container'>
-            <h3 className='conta'>Registrar usuarios</h3>
-            
+        <div>
+            <h1 className='conta'>Registrar Usuário</h1>
+            <div className='container'>
             <form className='contact_form' onSubmit={registrar}>
                 
                 <div className='nome'> 
-                <input required id='texto' placeholder='digite seu nome' type="text" name="name" value={name}
+                <input required placeholder='digite seu nome' type="text" name="name" value={name}
                 onChange={e => setName(e.target.value)}/>  
                 </div>
 
@@ -46,16 +46,17 @@ export default function RegisterUsers() {
                 </div>
 
                 <div className='password'>
-                <input required id='texto' placeholder='digite uma senha' type="password" name="password" value={password}
+                <input required placeholder='digite uma senha' type="password" name="password" value={password}
                 onChange={e => setPassword(e.target.value)}/> 
                 </div>
 
 
                 <div className='submit'> 
-                <button id="form_button" type='submit'>Registrar</button>
+                <button className="botao" type='submit'>Registrar</button>
                 </div>   
             </form>
             <ToastContainer/>
+            </div>
             </div>
     );
 }
