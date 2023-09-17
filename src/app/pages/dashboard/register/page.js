@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+import {ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 export default function RegisterUsers() {
     const route = useRouter();
@@ -17,6 +19,14 @@ export default function RegisterUsers() {
             password: password,
             email: email
         }
+        toast.success('Usuário cadastrado com sucesso!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+        });
     }
 
     return (
@@ -26,17 +36,17 @@ export default function RegisterUsers() {
             <form className='contact_form' onSubmit={registrar}>
                 
                 <div className='nome'> 
-                <input id='texto' placeholder='digite seu nome' type="text" name="name" value={name}
+                <input required id='texto' placeholder='digite seu nome' type="text" name="name" value={name}
                 onChange={e => setName(e.target.value)}/>  
                 </div>
 
                 <div className='email'>
-                <input placeholder='digite seu email' type="email" name="email" value={email}
+                <input required placeholder='digite seu email' type="email" name="email" value={email}
                 onChange={e => setEmail(e.target.value)}/>
                 </div>
 
                 <div className='password'>
-                <input id='texto' placeholder='digite uma senha' type="text" name="password" value={password}
+                <input required id='texto' placeholder='digite uma senha' type="password" name="password" value={password}
                 onChange={e => setPassword(e.target.value)}/> 
                 </div>
 
@@ -45,6 +55,7 @@ export default function RegisterUsers() {
                 <button id="form_button" type='submit'>Registrar</button>
                 </div>   
             </form>
+            <ToastContainer/>
             </div>
     );
 }

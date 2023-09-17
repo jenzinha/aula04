@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+import {ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 export default function AlterarUsers() {
     const route = useRouter();
@@ -17,6 +19,14 @@ export default function AlterarUsers() {
             passwordAlter: passwordAlter,
             emailAlter: emailAlter
         }
+        toast.success('Usuário alterado com sucesso!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+        });
     }
 
     return (
@@ -26,17 +36,17 @@ export default function AlterarUsers() {
             <form className='contact_form' onSubmit={alterar}>
                 
                 <div className='nome'> 
-                <input id='texto' placeholder='digite seu nome' type="text" name="name" value={nameAlter}
+                <input required id='texto' placeholder='digite seu nome' type="text" name="name" value={nameAlter}
                 onChange={e => setnameAlter(e.target.value)}/>  
                 </div>
 
                 <div className='email'>
-                <input placeholder='digite seu email' type="email" name="email" value={emailAlter}
+                <input required placeholder='digite seu email' type="email" name="email" value={emailAlter}
                 onChange={e => setEmailAlter(e.target.value)}/>
                 </div>
 
                 <div className='password'>
-                <input id='texto' placeholder='digite uma nova senha' type="text" name="password" value={passwordAlter}
+                <input required id='texto' placeholder='digite uma nova senha' type="password" name="password" value={passwordAlter}
                 onChange={e => setpasswordAlter(e.target.value)}/> 
                 </div>
 
@@ -45,6 +55,7 @@ export default function AlterarUsers() {
                 <button id="form_button" type='submit'>Atualizar</button>
                 </div>   
             </form>
+            <ToastContainer/>
             </div>
     );
 }

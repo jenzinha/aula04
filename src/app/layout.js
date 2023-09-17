@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const { push } = useRouter();
 
-  const logout = (e) => {
+    const logout = (e) => {
     e.preventDefault()
     Cookies.remove('token');
     push('/');
@@ -22,9 +22,7 @@ export default function RootLayout({ children }) {
       <body>
         <Link href="/pages/dashboard/register"> registrar </Link>
         <Link href="/pages/dashboard/alter"> alterar </Link>
-<button onClick={logout}> 
-sair
-</button>
+        <button onClick={logout}>  sair </button>
         <div>{children} </div>
         </body>
     </html>
