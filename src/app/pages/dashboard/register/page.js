@@ -36,17 +36,17 @@ export default function RegisterUsers() {
             <form className='contact_form' onSubmit={registrar}>
                 
                 <div className='nome'> 
-                <input required placeholder='digite seu nome' type="text" name="name" value={name}
+                <input required placeholder='Digite seu nome' type="text" name="name" value={name}
                 onChange={e => setName(e.target.value)}/>  
                 </div>
 
                 <div className='email'>
-                <input required placeholder='digite seu email' type="email" name="email" value={email}
+                <input required placeholder='Digite seu email' type="email" name="email" value={email}
                 onChange={e => setEmail(e.target.value)}/>
                 </div>
 
                 <div className='password'>
-                <input required placeholder='digite uma senha' type="password" name="password" value={password}
+                <input required placeholder='Digite uma senha' type="password" name="password" value={password}
                 onChange={e => setPassword(e.target.value)}/> 
                 </div>
 

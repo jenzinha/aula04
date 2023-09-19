@@ -37,17 +37,17 @@ export default function AlterarUsers() {
             <form className='contact_form' onSubmit={alterar}>
                 
                 <div className='nome'> 
-                <input required placeholder='digite seu nome' type="text" name="name" value={nameAlter}
+                <input required placeholder='Digite seu nome' type="text" name="name" value={nameAlter}
                 onChange={e => setnameAlter(e.target.value)}/>  
                 </div>
 
                 <div className='email'>
-                <input required placeholder='digite seu email' type="email" name="email" value={emailAlter}
+                <input required placeholder='Digite seu email' type="email" name="email" value={emailAlter}
                 onChange={e => setEmailAlter(e.target.value)}/>
                 </div>
 
                 <div className='password'>
-                <input required  placeholder='digite uma nova senha' type="password" name="password" value={passwordAlter}
+                <input required  placeholder='Digite uma nova senha' type="password" name="password" value={passwordAlter}
                 onChange={e => setpasswordAlter(e.target.value)}/> 
                 </div>
 

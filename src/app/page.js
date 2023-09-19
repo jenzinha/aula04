@@ -14,7 +14,8 @@ export default function Login() {
     password: '',
   });
   const { push } = useRouter();
-
+  
+  //usada para navegar para outras páginas após o login ser bem-sucedido.
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
