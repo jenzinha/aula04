@@ -12,6 +12,12 @@ const getUserAuthenticated = async (user) => {
    return userAuth;
 }
 const getUsers = async () =>{
-//fazer negocio get
+    const responseOfApi = await fetch(url + "/users", {
+    method: "GET",
+    headers: { "Content-Type": "application/json" }
+ });
+
+  const users = await responseOfApi.json();
+  return users;
 }
 export { getUsers, getUserAuthenticated};
