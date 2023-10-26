@@ -3,6 +3,7 @@ const url ="https://aula-17-10-6fsno1gqs-jenzinha.vercel.app";
 const getUserAuthenticated = async (user) => { 
    const responseOfApi = await fetch (url + "/user/authenticated",
     {
+      cache: 'no-cache',
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(user) 

@@ -1,7 +1,9 @@
 import '@/global.css'
+import { getUsers } from '../functions/handlerAcessAPI';
 
-export default async function ListUsers({users}){
+export default async function ListUsers(){
     await new Promise((resolve) => setTimeout(resolve, 3000));
+   const users = await getUsers()
     return(
         <div className='divUsers'>
             <h2>Lista de Usuários:</h2>
