@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import '@/global.css'
 
 export default async function Dashboard() {
-    const users = getUsers();
+    const users = await getUsers();
     return (
         <div>
             <h1>Usuários</h1>
