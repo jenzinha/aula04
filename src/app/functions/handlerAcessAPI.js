@@ -3,7 +3,6 @@ const url ="https://aula-17-10-6fsno1gqs-jenzinha.vercel.app";
 const getUserAuthenticated = async (user) => { 
    const responseOfApi = await fetch (url + "/user/authenticated",
     {
-      cache: 'no-cache',
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(user) 
@@ -21,4 +20,18 @@ const getUsers = async () =>{
   const users = await responseOfApi.json();
   return users;
 }
-export { getUsers, getUserAuthenticated};
+
+const postUsers = async (user) => {
+  try{
+    const responseOfApi = await fetch(url + "/user", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user) 
+    })
+    const useSave = await responseOfApi.json();
+    return useSave;
+  } catch {
+    return null;
+  }
+}
+export { getUsers, getUserAuthenticated, postUsers};
