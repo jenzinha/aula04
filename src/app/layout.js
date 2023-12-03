@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
       <header>
         <div>
         <Link href="/pages/dashboard/register"> registrar </Link>
-        <Link href="/pages/dashboard/alter"> alterar </Link>
         <Link href="/pages/dashboard"> lista de usuários </Link>
         <Link href="/"> login </Link>
         </div>
