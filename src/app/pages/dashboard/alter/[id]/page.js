@@ -20,7 +20,7 @@ export default function AlterarUsers({params}) {
             try{
             await updateUsers(user, params.id);
             await new Promise((resolve) => {
-            toast.success ('Usuário cadastrado com sucesso!');
+            toast.success ('Usuário atualizado com sucesso!');
             setTimeout(resolve, 5000);
             });
             return push("/pages/dashboard");
